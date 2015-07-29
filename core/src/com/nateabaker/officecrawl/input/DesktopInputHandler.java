@@ -51,6 +51,12 @@ public class DesktopInputHandler implements InputProcessor {
 		if (Gdx.input.isKeyPressed(Input.Keys.S)) {
 			player.getBody().applyForce(new Vector2(-MathUtils.cos(player.getRotation()),-MathUtils.sin(player.getRotation())), player.getBody().getWorldCenter(), true);
 		}
+		if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+			player.getBody().applyForce(new Vector2(-MathUtils.cos(player.getRotation())+MathUtils.PI/4,-MathUtils.sin(player.getRotation())), player.getBody().getWorldCenter(), true);
+		}
+		if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+			player.getBody().applyForce(new Vector2(-MathUtils.cos(player.getRotation())-MathUtils.PI/4,-MathUtils.sin(player.getRotation())), player.getBody().getWorldCenter(), true);
+		}
 
 		// End player controls
 	}

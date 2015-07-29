@@ -61,10 +61,10 @@ public class GameScreen implements Screen {
 		camera.translate(50, 50);
 		camera.update();
 
-		Dungeon dungeon = new Dungeon(100, 100, MathUtils.random(150, 200),
-				"Office01.png");
-		DungeonGenerator.createDungeon(dungeon);
-		SaveMap.saveDungeon(dungeon, "test.tmx");
+		//Dungeon dungeon = new Dungeon(100, 100, MathUtils.random(150, 200),
+		//		"Office01.png");
+		//DungeonGenerator.createDungeon(dungeon);
+		//SaveMap.saveDungeon(dungeon, "test.tmx");
 
 		tiledMap = new TmxMapLoader().load("Maps/test.tmx");
 		tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap, 0.03125f);
@@ -119,7 +119,7 @@ public class GameScreen implements Screen {
 			batch.draw(Assets.player.reg,
 					player.getBody().getPosition().x - 0.5f, player.getBody()
 							.getPosition().y - 0.5f, 0, 0, 1, 1, 1, 1, player
-							.getRotation());
+							.getRotation()*MathUtils.radDeg);
 			batch.end();
 		}
 		if (gui.debug == true)
